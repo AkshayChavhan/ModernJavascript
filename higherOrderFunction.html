@@ -1,0 +1,24 @@
+<script>
+    const interviewQuestion = (name) =>{
+        if(name == 'vinod'){
+            return function(topic){
+                console.log(`hii , ${name} . What is ${topic} ? Please explain is us .`);
+            }
+        }else if(name =='thapa'){
+            return function(topic){
+                console.log(`What is ${topic}? Please Explain us.`);
+            }
+        }else if(name=='thapatechnical'){
+            return function(topic){
+                console.log(`What is ${topic} ? Please Explain us.`);
+            }
+        }else{
+            return function(){
+                console.log("welcome to interview");
+            }
+        }
+    }
+
+    interviewQuestion('vinod')('rantinoal')
+
+</script>

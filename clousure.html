@@ -1,0 +1,28 @@
+<!-- 1 ] A closure is combination of function and lexical envornment
+    within which that function is declared
+
+2 ] Closure in action that is inner function  can have access to 
+the outer function variables  AS WELL AS  the global variables.
+
+3]  the return statement  does not execute the inner function  - function
+is executed  only when followed by () ,but rather than return statement return 
+the entire body of function. -->
+
+
+<script>
+
+    const  outerfun = (a) => {
+        let b=10;
+        const innerfun =() =>{
+            let sum = a + b;
+            console.log(`sum of two number is ${sum}.`);
+        }
+        return innerfun;
+    }
+    let inner = outerfun(5);  //the value is of a and b not deleted but they are stored somewhere due to closures
+    
+    console.dir(inner);
+
+    inner();
+
+</script>

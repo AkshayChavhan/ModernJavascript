@@ -1,0 +1,22 @@
+<script>
+
+    const youtuber1 = {
+        name : 'ThaapaTechnical' ,
+        content : "programming",
+        feature : function(){
+            console.log(`very frinedly way of teaching. ${this.name} is my fav
+            ${this.content}`);
+        }
+    }
+
+    youtuber1.feature;
+
+    const youtuber2 ={
+        name: "kuchhbhi",
+        content : 'programming '
+    }
+
+    youtuber1.feature.call(youtuber2);
+
+     
+</script>
