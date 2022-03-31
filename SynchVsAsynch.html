@@ -1,0 +1,53 @@
+<!-- Synchronous  :
+
+A synchronous requests blocks the client until  operation
+completes i.e. browser is unresponsive . In such case , javascript engine
+of the browser is blocked.
+
+Asynchronous :- 
+
+An asynchronous request doesnt block theclient i.e. browser is responsive 
+
+At that time ,user can perform another operations also.
+
+In such case,js engine of the browser is not blocked.
+ -->
+
+
+ <script>
+
+    //  SYNCHRONOUS 
+    // const fun2 = () =>{
+    //         console.log('function 2 is running')
+    // }
+
+    // const fun1 =() =>{
+    //     console.log('Function 1 is running');
+    //     fun2();
+    //     console.log('functiion 1 is ending ')
+       
+    // }
+
+    // fun1();
+
+
+    // ASYNCHRONOUS 
+
+    const fun2 =()=>{
+        setTimeout( () => {
+            console.log("Function 2 is running");
+        } , 5000)
+    }
+
+    const fun1 = () =>{
+        console.log("function 1 is running");
+        fun2();
+        console.log("function 1 is ending");
+    }
+    fun1();
+
+
+
+
+
+ </script>

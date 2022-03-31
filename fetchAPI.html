@@ -1,0 +1,26 @@
+The Fetch API :- 
+
+The Fetch API provides a fetch() method defined on the window object ,which you
+can use to perform requests.
+
+This method returs a Promise that you can useto retrieve the 
+response of the requests
+
+https://api.covid19api.com/summary
+
+<script>
+    fetch('https://api.covid19api.com/summary')
+    .then((res) => {
+        console.log(res);
+        return res.json();
+    })
+    .then((result) =>{
+        const mydata = result;
+        console.log(mydata);
+        console.log(mydata.Countries);
+        console.log(mydata.Countries[112]);
+        console.log(`the country name is ${mydata.Countries[112].Country}
+        and total death is ${mydata.Countries[112].NewDeaths} `)
+    }).catch((err) => console.log(`the error is  ${err}`))
+
+</script>

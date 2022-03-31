@@ -1,0 +1,23 @@
+https://api.covid19api.com/summary
+
+<script>
+
+async function getCovidApi(){
+
+  try{
+        const fetchData =  await fetch('https://api.covid19api.com/summary');
+        console.log(fetchData);
+        const newData = await fetchData.json() ;
+        // console.log(newData.Countries[102]);
+        const saved = newData.Countries[102];
+        console.log(`the country name ${saved.Country} and the active covid case are ${saved.NewConfirmed} on ${saved.Date}`);
+  }catch(error){
+         console.log(error);
+  }      
+}
+
+getCovidApi() ;
+
+
+
+</script>

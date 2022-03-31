@@ -1,0 +1,52 @@
+Promises are used to handle asynchronous operations in JS .
+They are easy to manage when dealing with multiple asynchronous
+operations where callbacks can create callbacks hell leading to
+unmanageable code
+
+
+A Promise is an object that keep track about wheather a certin event has
+happened already or not.
+
+Determines what happens after the events has happpened.
+
+Promise has 3 stages :
+1] Pending
+2] Resolved
+3] Rejected
+
+ 
+<script>
+
+    const pobj1 =new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let roll_No = [1,2,3,4,5];
+            resolve(roll_No);
+            // reject("error found in promise");
+        },2000);
+    });
+
+    const getBiodata = (indexdata) => {
+        return new Promise((resolve,reject) =>{
+            setTimeout((indexData) => {
+                let biodata = {
+                    name :'vinod',
+                    age : 26
+                }
+                resolve(`My roll no. is ${indexdata}.My name is  ${biodata.name} and I am ${biodata.age} years old`);
+            },2000,indexdata);
+        });
+    }
+
+
+    pobj1.then((rollno) => {
+        console.log(rollno);
+        return getBiodata(rollno[1]);
+    }).then((result) =>{
+        console.log(result);
+    })
+    .catch((error) =>{
+        console.log(error);
+    })
+
+
+</script>

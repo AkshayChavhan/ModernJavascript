@@ -1,0 +1,66 @@
+ In programming language we often say 'an object is an instance of a class'
+ This means that ,using a class ,I can create many objects and they all share
+ methods and properties.
+
+
+<script>
+
+class Student{
+    constructor(name ,age , cls){
+        this.myname = name;
+        this.mycls = cls;
+        this.myage = age;
+    }
+
+    biodata(){
+        // console.log(`My name is ${this.myname} and from ${this.mycls} and 
+        // age is ${this.myage}`)
+
+        return `My name is ${this.myname} and from ${this.mycls} and 
+        age is ${this.myage}`;
+    }
+}
+
+
+class Player extends Student{
+    constructor(name,age,cls,game){
+        super(name,age,cls);
+        this.mygame = game ;
+    }
+
+    playerBio(){
+        return `${super.biodata()} . I am player of ${this.mygame}` ;
+    
+    }
+}
+
+let obj1 = new Student('vinod' , 26 , 'MCA');
+let obj2 = new Player( 'Akshay' , 25 ,'btech','cricket')
+
+obj1.biodata();
+console.log(obj2.playerBio());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
