@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+</head>
+<body>
+<ul id="element">
+    <li class="list-item">First Element</li>
+    <li class="list-item">Second Element</li>
+    <li class="list-item">Third Element</li>
+</ul>
+
+<table border="1">
+    <tr>
+        <td>One</td>
+        <td>Two</td>
+    </tr>
+    <tr>
+        <td>Three</td>
+        <td>Four</td>
+    </tr>
+</table>
+
+<script>
+    /* 
+    //how to get Root Node
+    console.log(document.documentElement);
+
+
+    //element Node
+    console.log(document.body)
+    console.log(document.head)
+    
+    //childNode :- it returns all nodes including comment and text node
+    console.log(document.body.childNodes)
+
+    
+    //children :- it returns all nodes excluding comment and text node
+    //it did not return Array
+    console.log(document.body.children)
+
+    //to convert above into Array
+    const arr = Array.from(document.body.children)
+    console.log(arr);
+
+    //first Child :- this includes comment and text nodes
+    console.log(document.body.firstChild);
+    
+    //last Child :- this includes comment and text nodes
+    console.log(document.body.firstChild);
+    
+    //first Child :  this excludes comment and text nodes
+    console.log(document.body.firstElementChild);
+
+    //last Child : this excludes comment and text nodes
+    console.log(document.body.lastElementChild);
+    
+    //to iterate over the body
+    for(node of document.body.children ){
+        console.log(node)
+    }
+
+    //to find siblings
+    const mainTag = document.body.children[0] ;
+    console.log(mainTag.nextSibling)  //include text and comment
+    console.log(mainTag.nextElementSibling) //exclude 
+
+    //li
+    const firstLiTag= mainTag.children[0];
+    const secondLiTag= mainTag.children[1];
+    console.log(secondLiTag.previousElementSibling.textContent);
+
+
+    // table dom manupulation
+    const tableTag = document.body.children[1];
+    console.log(tableTag);
+    
+    //list of tbodies
+    console.log(tableTag.tBodies);
+    
+    //list of rows
+    console.log(tableTag.tBodies[0].rows);
+    
+    //rows
+    console.log(tableTag.tBodies[0].rows[0]);
+    
+    //cells
+    console.log(tableTag.tBodies[0].rows[0].cells);
+    
+    //text content
+    console.log(tableTag.tBodies[0].rows[0].cells[0].textContent);
+    
+    //styling on cells
+    console.log(tableTag.tBodies[0].rows[0].cells[0].style = 'background-color: blue');
+
+    */
+
+
+
+    // ID  whenever we give id to element that element is globally accessasible
+    console.log(element)    //to know id element if ul is globally acccessible
+
+    //styling
+    // element.style.background ='red';
+    
+
+    // const ulTag = document.getElementById('element');
+    // ulTag.style.backgroundColor = 'pink';
+
+    // class name:-
+    const listItem = document.getElementsByClassName('list-item');
+    console.log(listItem);
+
+    //tagname:-
+    console.log(document.getElementsByTagName('table'));
+
+    //queryselector
+
+    const listItems = document.querySelector('.list-item');
+
+    console.log(listItems);
+
+    //queryselectorAll
+    const listsOfAll = document.querySelectorAll('.list-item');
+    console.log(listsOfAll);
+    
+    const listElement = document.querySelector('#element');
+    console.log(listElement);
+
+    const lastUl = document.querySelectorAll('ul > li : last-child')
+    console.log(lastUl);
+
+
+
+</script>
+    
+</body>
+</html>
+
+
+<!-- 
+    notes:
+    
+    1] Nodes :- 
+    html is called as Root Node .
+
+    2] Decendant Node :-
+    head node is decendant node of html node.
+
+    3]Sibling Nodes:- 
+    Nodes which has same parent.
+
+
+    ---------------
+    Document Object  :- it came with by default window object.
+    It has all node available for dom manupulation.
+
+
+
+ -->
